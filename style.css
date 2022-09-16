@@ -421,14 +421,14 @@ svg.flipped{
 }
 
 /* Contact Us */
-.contact-us .section-container{
+.contact .section-container{
     flex-direction: row-reverse;
 }
-.contact-us .section-content{
+.contact .section-content{
     background-color: var(--rp-tertiary);
     color: #fff;
 }
-.contact-us .entry-content{
+.contact .entry-content{
     display: none;
 }
 
