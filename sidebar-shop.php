@@ -1,0 +1,1 @@
+<h1>Custom Sidebar Shop</h1>

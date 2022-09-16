@@ -1,0 +1,437 @@
+/*
+
+ Theme Name:   Storefront RP
+
+ Theme URI:    http://sitename.com/storefront/
+
+ Description:  Storefront Child Theme for Rhythmic Patterns
+
+ Author:       eRui Design
+
+ Author URI:   https://eruisw.com
+
+ Template:     storefront
+
+ Version:      1.0.0
+
+ License:      GNU General Public License v2 or later
+
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+
+ Tags:         light, dark, full-width, responsive-layout, accessibility-ready
+
+ Text Domain:  storefront-child
+
+*/
+
+/*Theme customisations start here*/
+
+:root{
+    --rp-tertiary:rgb(31 41 55 / 1);
+    --rp-primary:rgb(123 164 64 / 1);
+    --rp-secondary:rgb(101 45 144 / 1);
+    --rp-lightgray:rgb(171 168 168 / 1);
+}
+
+
+/* Resets */
+
+img{
+    border-radius: 0;
+}
+.site-main{
+    margin: 0 0;
+}
+.hentry{
+    margin: 0 0;
+}
+.storefront-full-width-content .content-area{
+    margin: 0 0;
+}
+.hentry .wp-post-image{
+    margin: 0 0;
+}
+.site{
+    overflow-x: unset;/* sticky nav will not work */
+}
+
+
+/* Styles */
+.button{
+    border-radius: 5px;
+    margin: 0 0;
+    background: var(--rp-lightgray);
+    color: #000;
+    display: inline-block;
+    text-align: center;
+    transition: ease .5s;
+}
+.button span{
+    padding: 0 1rem;
+    transition: ease .5s;
+}
+.button:hover span{
+    padding: 0 .5rem 0 1.5rem;
+}
+
+
+
+.full{
+    width: 100%;
+}
+
+.inner{
+    padding: 2rem;
+}
+
+.card{
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-heading,
+.card-body,
+.card-footer{
+    padding: 1rem;
+}
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+.single-product div.product .summary {
+    border: 1px solid #efefef;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.col-full{
+    max-width:100%;
+    padding: 0 0;
+ }
+ .onsale{
+    display: none;
+ }
+ .upsells{
+    display: none;
+ }
+ /* Single Products */
+ .single-product div.product .single_variation .price, /* variant price */
+ .single-product div.product p.price{ /* default price */
+    font-size: 1.41575em;
+  }
+
+ /* Tabs */
+
+ .storefront-full-width-content .woocommerce-tabs ul.tabs{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    border-top: none;
+ }
+ .storefront-full-width-content .woocommerce-tabs .panel{
+    width: 100%;
+ }
+
+ .woocommerce-tabs ul.tabs li a {
+    padding: 1em 2em;
+    display: block;
+}
+
+  .woocommerce-tabs ul.tabs li {
+    display: block;
+    margin: 0;
+    border-top: 1px solid rgba(0,0,0,.05);
+    border-bottom: none;
+    position: relative;
+  }
+
+ /* Listing Products */
+ .page-template-template-fullwidth-php .site-main ul.products li.product, 
+ .page-template-template-fullwidth-php .header-widget-region ul.products li.product, 
+ .page-template-template-homepage-php .site-main ul.products li.product, 
+ .page-template-template-homepage-php .header-widget-region ul.products li.product, 
+ .storefront-full-width-content .site-main ul.products li.product, 
+ .storefront-full-width-content .header-widget-region ul.products li.product {
+    border: 1px solid #efefef;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/* Product */
+
+.storefront-product-pagination {
+    display: none;
+}
+
+/* Header */
+
+.site-header{
+    margin: 0 0;
+    padding: 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+}
+
+.site-branding-wrapper{
+
+}
+.site-header .site-branding img {
+    height: auto;
+    width: 320px;
+    max-height: none;
+    max-width: 320px;
+}
+.woocommerce-active .site-header .site-branding{
+    width: auto;
+    margin: 0 0;
+}
+.header-wrapper{
+    display: flex;
+    align-items: center;
+}
+.storefront-primary-navigation{
+    display: flex;
+}
+.woocommerce-active .site-header .main-navigation{
+    width: auto;
+    margin: 0 0;
+}
+
+.site-header-cart .widget_shopping_cart, .site-header-cart.focus .widget_shopping_cart {
+    right: 0;
+    width: 300px;
+    left: auto;
+    display: none;
+}
+.site-header-cart:hover .widget_shopping_cart, .site-header-cart.focus .widget_shopping_cart {
+    right: 0;
+    width: 300px;
+    left: auto;
+    display: block;
+}
+
+
+
+/*  On WAM Category */
+
+.custom-wrapper{
+    display: flex;
+}
+
+.custom-wrapper .product{
+    overflow: hidden;
+    flex-basis: 80%;
+}
+.custom-wrapper .custom-sidebar{
+    flex-basis: 20%;
+}
+
+.single-product .custom-wrapper .product .images,
+.storefront-full-width-content.single-product .custom-wrapper .product .images,
+.single-product .custom-wrapper .product .summary,
+.storefront-full-width-content.single-product .custom-wrapper .product .summary{
+    width: 50%;
+    margin: 0 0;
+}
+
+.categories-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Reviews */
+
+.storefront-full-width-content.single-product #reviews .commentlist li .comment_container .comment-text,
+#reviews .commentlist li .comment_container .comment-text{
+    float: left;
+    border: 1px solid #efefef;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/*** Homepage ***/
+
+.home .col-full{
+    padding: 0 0;
+}
+
+.home.blog .site-header, .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header {
+    margin-bottom: 0;
+}
+
+/* Sections */
+.section-wrapper{
+    position: relative;
+    min-height: 600px;
+    background: #efefef;
+}
+.section-container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+.section-content{
+    flex-basis: 32rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.section-content .button{
+    background: rgb(255 255 255 / 1);
+}
+.section-content .button:hover{
+    background: rgb(255 255 255 / 0.6);
+}
+
+.section-content .section-title{
+    color: #fff;
+}
+
+.section-content h3{
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.section-image{
+    object-fit: cover;
+    min-height: 600px;
+}
+.wave{
+    height: 100%;
+    width: auto;
+    fill: var(--rp-tertiary);
+}
+svg.wave-left{
+    
+}
+
+/* Hero */
+
+.hero-content{
+    display: flex;
+    align-items: center;
+}
+.hero-content > *{
+    flex: 50%;
+}
+.home h1{
+    color: #fff;
+    font-weight: bolder;
+}
+.home h1 span{
+    padding-right: 2rem;
+}
+
+
+/* About Us */
+.about-us .section-container{
+    flex-direction: row-reverse;
+}
+.about-us .section-content{
+    background: var(--rp-tertiary);
+}
+.about-us .wave{
+    fill: var(--rp-tertiary);
+}
+/* Curriculum - For EFL Teacher */
+.curriculum .section-content{
+    background: var(--rp-primary);
+}
+.curriculum .wave{
+    fill: var(--rp-primary);
+}
+
+/* For Arts Student */
+.for-arts-student .section-container{
+    flex-direction: row-reverse;
+}
+.for-arts-student .section-content{
+    background: var(--rp-secondary);
+}
+.for-arts-student .wave{
+    fill: var(--rp-secondary);
+}
+
+/* Shop */
+.shop .section-wrapper{
+    background: var(--rp-tertiary);
+}
+.home .shop .section-container{ /* .home specifity to overide .shop Page */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    position: relative;
+}
+.shop .section-content{
+    background: var(--rp-tertiary);
+}
+
+/*** Footer ***/
+.site-footer{
+    padding: 0 0;
+}
+.footer-content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background: var(--rp-primary);
+    gap: 2rem;
+}
+
+/* Contact Form */
+.wpcf7-form input,
+.wpcf7-form textarea{
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+}
+
+
+/*** Pages ***/
+
+/* About Us */
+.about-us .section-content{
+    background-color: var(--rp-tertiary);
+    color: #fff;
+}
+
+/* Curriculum */
+.curriculum svg,
+svg.flipped{
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    margin-left: -0.5px;
+}
+
+/* Contact Us */
+.contact-us .section-container{
+    flex-direction: row-reverse;
+}
+.contact-us .section-content{
+    background-color: var(--rp-tertiary);
+    color: #fff;
+}
+.contact-us .entry-content{
+    display: none;
+}
+
+/* For Arts Student */
+.page .for-arts-student{
+    
+}
