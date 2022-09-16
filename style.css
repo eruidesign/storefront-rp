@@ -55,6 +55,10 @@ img{
     overflow-x: unset;/* sticky nav will not work */
 }
 
+ul.products::before, ul.products::after {
+    display: none;
+  }
+
 
 /* Styles */
 .button{
@@ -204,6 +208,12 @@ img{
 .woocommerce-active .site-header .main-navigation{
     width: auto;
     margin: 0 0;
+    flex-grow: 1;
+    
+}
+
+.site-header-cart{
+    width: auto;
 }
 
 .site-header-cart .widget_shopping_cart, .site-header-cart.focus .widget_shopping_cart {
