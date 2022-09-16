@@ -52,8 +52,8 @@
         <?php
             switch($post_slug)
             {
-                case 'about-us';
-                    get_template_part( 'template-parts/content', 'about-us' );
+                case 'our-story';
+                    get_template_part( 'template-parts/content', 'our-story' );
                     break;
                 case 'for-arts-student';
                     get_template_part( 'template-parts/content', 'for-arts-student' );
