@@ -159,6 +159,8 @@ img{
     border: 1px solid #efefef;
     padding: 1rem;
     border-radius: 1rem;
+    width: auto !important;
+    margin-right: 0 !important;
 }
 
 /* Product */
@@ -435,4 +437,10 @@ svg.flipped{
 /* For Arts Student */
 .page .for-arts-student{
     
+}
+
+.products.columns-5{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: .5rem;
 }
