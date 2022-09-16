@@ -197,6 +197,7 @@ img{
 }
 .storefront-primary-navigation{
     display: flex;
+    flex-grow: 1;
 }
 .woocommerce-active .site-header .main-navigation{
     width: auto;
@@ -338,13 +339,13 @@ svg.wave-left{
 
 
 /* About Us */
-.about-us .section-container{
+.our-story .section-container{
     flex-direction: row-reverse;
 }
-.about-us .section-content{
+.our-story .section-content{
     background: var(--rp-tertiary);
 }
-.about-us .wave{
+.our-story .wave{
     fill: var(--rp-tertiary);
 }
 /* Curriculum - For EFL Teacher */
@@ -402,7 +403,7 @@ svg.wave-left{
 /*** Pages ***/
 
 /* About Us */
-.about-us .section-content{
+.our-story .section-content{
     background-color: var(--rp-tertiary);
     color: #fff;
 }
