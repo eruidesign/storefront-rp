@@ -37,7 +37,7 @@ if ( post_password_required() ) {
     $current_term_ID = $terms[0]->term_id;
     $parent_term_ID = get_term_by('slug','wam','product_cat')->term_id;
 ?>
-<div class="custom-wrapper">
+<div class="custom-wrapper inner">
     <?php //if($terms[0]->slug == 'seasons') : ?>
         <?php if(term_is_ancestor_of($parent_term_ID,$current_term_ID,'product_cat')) : ?>
 

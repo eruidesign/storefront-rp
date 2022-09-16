@@ -33,11 +33,7 @@ do_action( 'woocommerce_before_main_content' );
 <?php
 $term = get_queried_object();
 
-//print_r($term);
-
 $term_slug = $term->slug;
-
-//echo 'Term Slug: '.$term_slug.'<br>';
 
 if($term->parent > 0){
     $parent_term = get_term($term->parent, false);
@@ -168,8 +164,6 @@ if($child_categories) : ?>
 ?>
 
 <?php endif;
-
-//echo do_shortcode('[product_page id="467"]');
 
 /**
  * Hook: woocommerce_after_main_content.
