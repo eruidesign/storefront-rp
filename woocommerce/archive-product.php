@@ -57,6 +57,16 @@ $banner_url = get_the_post_thumbnail_url($shop_page_ID,'banner-1440x600');
 </section>
 
 <?php
+    /**
+     * Functions hooked in to storefront_before_content
+     *
+     * @hooked storefront_header_widget_region - 10
+     * @hooked woocommerce_breadcrumb - 10
+     */
+    do_action( 'storefront_before_content' );
+?>
+
+<?php
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -89,19 +99,29 @@ $arts_categories = get_terms( $arts_args );
 
         <?php foreach ($arts_categories as $arts_cat) : ?> 
     
-            <li class="columns product product_cat">
+            <li class="card product product_cat">
                 <?php
-                    $thumbnail_id = get_term_meta( $arts_cat->term_id, 'thumbnail_id', true );
-                    $image = wp_get_attachment_image_url( $thumbnail_id, 'woocommerce_thumbnail' );
+                    $thumb_id = get_term_meta( $arts_cat->term_id, 'thumbnail_id', true );
+                    $thumb_url = wp_get_attachment_image_url( $thumb_id, 'woocommerce_thumbnail' );
                 ?>
 
                 <a href="<?php echo esc_url(get_term_link($arts_cat));?>">
-                    <img src="<?php echo $image;?>" alt="<?php echo $arts_cat->name;?>" class="w-full"/>
-                    <h2 class="woocommerce-loop-product__title"><?php echo $arts_cat->name;?></h2>
-                    <div class=""><?php echo $arts_cat->description;?></div>
-                </a>
 
-                <a href="<?php echo esc_url(get_term_link($arts_cat));?>" class="button full">Discover <?php echo $arts_cat->name;?></a>
+                    <?php  if($thumb_url) :?>
+                        <img src="<?php echo $thumb_url;?>" alt="<?php echo $arts_cat->name;?>" class="full">
+                    <?php else : ?>
+                        <div class="img-placeholder">&nbsp;</div>
+                    <?php endif;?>
+
+                    <!--<img src="<?php echo $image;?>" alt="<?php echo $arts_cat->name;?>" class="full"/>-->
+                    <div class="card-heading">
+                        <h2 class="woocommerce-loop-product__title"><?php echo $arts_cat->name;?></h2>
+                    </div>
+                    <div class="card-body"><?php echo $arts_cat->description;?></div>
+                </a>
+                <div class="card-footer">
+                    <a href="<?php echo esc_url(get_term_link($arts_cat));?>" class="button full">Discover <?php echo $arts_cat->name;?></a>
+                </div>
             </li>
         <?php endforeach;?>
 
@@ -124,20 +144,27 @@ $songs_categories = get_terms( $songs_args );
 
         <?php foreach ($songs_categories as $songs_cat) : ?> 
     
-            <li class="columns product product_cat">
+            <li class="card product product_cat">
                 <?php
-                    $thumbnail_id = get_term_meta( $songs_cat->term_id, 'thumbnail_id', true );
-                    $image = wp_get_attachment_image_url( $thumbnail_id, 'woocommerce_thumbnail' );
+                    $thumb_id = get_term_meta( $songs_cat->term_id, 'thumbnail_id', true );
+                    $thumb_url = wp_get_attachment_image_url( $thumb_id, 'woocommerce_thumbnail' );
                 ?>
-
                 <a href="<?php echo esc_url(get_term_link($songs_cat));?>">
-                    <img src="<?php echo $image;?>" alt="<?php echo $songs_cat->name;?>" class="w-full"/>
-                    <h2 class="woocommerce-loop-product__title"><?php echo $songs_cat->name;?></h2>
-                    <div class=""><?php echo $songs_cat->description;?></div>
-                </a>
+                    <?php  if($thumb_url) :?>
+                        <img src="<?php echo $thumb_url;?>" alt="<?php echo $songs_cat->name;?>" class="full">
+                    <?php else : ?>
+                        <div class="img-placeholder">&nbsp;</div>
+                    <?php endif;?>
 
-                <a href="<?php echo esc_url(get_term_link($songs_cat));?>" class="button full">Discover <?php echo $songs_cat->name;?></a>
+                    <!--<img src="<?php echo $image;?>" alt="<?php echo $songs_cat->name;?>" class="full"/>-->
+                    <div class="card-heading"><h2 class="woocommerce-loop-product__title"><?php echo $songs_cat->name;?></h2></div>
+                    <div class="card-body"><?php echo $songs_cat->description;?></div>
+                </a>
+                <div class="card-footer">
+                    <a href="<?php echo esc_url(get_term_link($songs_cat));?>" class="button full">Discover <?php echo $songs_cat->name;?></a>
+                </div>
             </li>
+
         <?php endforeach;?>
 
         <?php woocommerce_product_loop_end();?>

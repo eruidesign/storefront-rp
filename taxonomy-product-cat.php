@@ -19,15 +19,16 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
-/**
- * Hook: woocommerce_before_main_content.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked woocommerce_breadcrumb - 20
- * @hooked WC_Structured_Data::generate_website_data() - 30
- */
-do_action( 'woocommerce_before_main_content' );
+?>
 
+<?php
+    /**
+     * Functions hooked in to storefront_before_content
+     *
+     * @hooked storefront_header_widget_region - 10
+     * @hooked woocommerce_breadcrumb - 10
+     */
+    do_action( 'storefront_before_content' );
 ?>
 
 <?php
@@ -46,47 +47,61 @@ $args = array(
     'hide_empty' => false,
     'child_of'   => $term->term_id,
 );
-$child_categories = get_terms( $args );
+$child_categories = get_terms( $args );?>
 
-if($child_categories) : ?>
+<header class="woocommerce-products-header inner">
+    <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+        <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+    <?php endif; ?>
 
-        <header class="woocommerce-products-header">
-            <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-                <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-            <?php endif; ?>
+    <?php
+    /**
+     * Hook: woocommerce_archive_description.
+     *
+     * @hooked woocommerce_taxonomy_archive_description - 10
+     * @hooked woocommerce_product_archive_description - 10
+     */
+    do_action( 'woocommerce_archive_description' );
+    ?>
+</header>
 
-            <?php
-            /**
-             * Hook: woocommerce_archive_description.
-             *
-             * @hooked woocommerce_taxonomy_archive_description - 10
-             * @hooked woocommerce_product_archive_description - 10
-             */
-            do_action( 'woocommerce_archive_description' );
-            ?>
-        </header>
+<?php if($child_categories) : ?>
+
+        <div class="custom-wrapper inner not-flex">
 
         <?php woocommerce_product_loop_start();?>
 
         <?php foreach ($child_categories as $cat) : ?> 
     
-            <li class="columns product product_cat">
+            <li class="card product product_cat">
                 <?php
-                    $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
-                    $image = wp_get_attachment_image_url( $thumbnail_id, 'woocommerce_thumbnail' );
+                    $thumb_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+                    $thumb_url = wp_get_attachment_image_url( $thumb_id, 'woocommerce_thumbnail' );
                 ?>
 
                 <a href="<?php echo esc_url(get_term_link($cat));?>">
-                    <img src="<?php echo $image;?>" alt="<?php echo $cat->name;?>" class="w-full"/>
-                    <h2 class="woocommerce-loop-product__title"><?php echo $cat->name;?></h2>
-                    <div class=""><?php echo $cat->description;?></div>
-                </a>
+                    <?php  if($thumb_url) :?>
+                        <img src="<?php echo $thumb_url;?>" alt="<?php echo $cat->name;?>" class="full">
+                    <?php else : ?>
+                        <div class="img-placeholder">&nbsp;</div>
+                    <?php endif;?>
 
-                <a href="<?php echo esc_url(get_term_link($cat));?>" class="button full">Discover <?php echo $cat->name;?> Songs</a>
+                    <!--<img src="<?php echo $image;?>" alt="<?php echo $cat->name;?>" class="w-full"/>-->
+                    <div class="card-heading">
+                        <h2 class="woocommerce-loop-product__title"><?php echo $cat->name;?></h2>
+                    </div>
+                    
+                    <div class="card-body"><?php echo $cat->description;?></div>
+                </a>
+                <div class="card-footer">
+                    <a href="<?php echo esc_url(get_term_link($cat));?>" class="button full">Discover <?php echo $cat->name;?> Songs</a>
+                </div>
             </li>
         <?php endforeach;?>
 
         <?php woocommerce_product_loop_end();?>
+
+        </div>
 
 <?php elseif (isset($parent_term_slug) && ($parent_term_slug == 'wam')) : ?>
     <?php
@@ -121,7 +136,10 @@ if($child_categories) : ?>
 
 <?php
     if ($term->count > 0){
-        /**
+
+    echo '<div class="custom-wrapper inner not-flex">';
+
+    /**
 	 * Hook: woocommerce_before_shop_loop.
 	 *
 	 * @hooked woocommerce_output_all_notices - 10
@@ -153,6 +171,9 @@ if($child_categories) : ?>
 	 * @hooked woocommerce_pagination - 10
 	 */
 	do_action( 'woocommerce_after_shop_loop' );
+
+    echo '</div>';
+    
     }else{
         /**
          * Hook: woocommerce_no_products_found.

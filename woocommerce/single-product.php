@@ -28,15 +28,25 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
-		do_action( 'woocommerce_before_main_content' );
+		//do_action( 'woocommerce_before_main_content' );
 	?>
 
-		<?php while ( have_posts() ) : ?>
-			<?php the_post(); ?>
+	<?php
+        /**
+         * Functions hooked in to storefront_before_content
+         *
+         * @hooked storefront_header_widget_region - 10
+         * @hooked woocommerce_breadcrumb - 10
+         */
+        do_action( 'storefront_before_content' );
+    ?>
 
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+	<?php while ( have_posts() ) : ?>
+		<?php the_post(); ?>
 
-		<?php endwhile; // end of the loop. ?>
+		<?php wc_get_template_part( 'content', 'single-product' ); ?>
+
+	<?php endwhile; // end of the loop. ?>
 
 	<?php
 		/**

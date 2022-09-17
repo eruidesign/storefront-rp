@@ -59,6 +59,18 @@ ul.products::before, ul.products::after {
     display: none;
   }
 
+.storefront-sorting{
+    margin: 1rem 0 !important;
+}
+
+.storefront-full-width-content.woocommerce-cart .entry-header, 
+.storefront-full-width-content.woocommerce-checkout .entry-header,
+.storefront-full-width-content.woocommerce-account .entry-header, 
+.storefront-full-width-content .woocommerce-products-header {
+    text-align: center;
+    padding: 0 0;
+  }
+
 
 /* Styles */
 .button{
@@ -85,7 +97,7 @@ ul.products::before, ul.products::after {
 }
 
 .inner{
-    padding: 2rem;
+    padding: 2rem !important;
 }
 
 .card{
@@ -95,15 +107,29 @@ ul.products::before, ul.products::after {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid #efefef;
 }
 .card-heading,
 .card-body,
 .card-footer{
     padding: 1rem;
 }
+
+.card-footer .button{
+    width: 100%; /* too general? */
+    margin-bottom: 0;
+}
+
 .card img{
     width: 100%;
     height: auto;
+}
+
+.img-placeholder{
+    width: 100%;
+    min-height: 200px;
+    aspect-ratio: 16 / 9;
+    background: #efefef;
 }
 
 .single-product div.product .summary {
@@ -132,7 +158,8 @@ ul.products::before, ul.products::after {
 
  .storefront-full-width-content .woocommerce-tabs ul.tabs{
     width: 100%;
-    display: flex;
+    display: block;
+    float: none;
     border-bottom: 1px solid rgba(0,0,0,.05);
     border-top: none;
  }
@@ -144,11 +171,14 @@ ul.products::before, ul.products::after {
     padding: 1em 2em;
     display: block;
 }
+.woocommerce-tabs ul.tabs li:first-child{
+}
 
-  .woocommerce-tabs ul.tabs li {
-    display: block;
+
+.woocommerce-tabs ul.tabs li {
+    display: inline-block;
     margin: 0;
-    border-top: 1px solid rgba(0,0,0,.05);
+    border-top: none;
     border-bottom: none;
     position: relative;
   }
@@ -160,11 +190,17 @@ ul.products::before, ul.products::after {
  .page-template-template-homepage-php .header-widget-region ul.products li.product, 
  .storefront-full-width-content .site-main ul.products li.product, 
  .storefront-full-width-content .header-widget-region ul.products li.product {
-    border: 1px solid #efefef;
-    padding: 1rem;
-    border-radius: 1rem;
     width: auto !important;
     margin-right: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+ul.products li.product, 
+ul.products .wc-block-grid__product, 
+.wc-block-grid__products li.product, 
+.wc-block-grid__products .wc-block-grid__product {
+    margin-left: 0;
+    margin-bottom: 0;
 }
 
 /* Product */
@@ -174,6 +210,11 @@ ul.products::before, ul.products::after {
 }
 
 /* Header */
+
+.storefront-breadcrumb{
+    padding: 2rem 2rem 0 2rem;
+    margin: 0 0 0 0;
+}
 
 .site-header{
     margin: 0 0;
@@ -209,20 +250,22 @@ ul.products::before, ul.products::after {
     width: auto;
     margin: 0 0;
     flex-grow: 1;
-    
+
 }
 
 .site-header-cart{
     width: auto;
 }
 
-.site-header-cart .widget_shopping_cart, .site-header-cart.focus .widget_shopping_cart {
+.site-header-cart .widget_shopping_cart, 
+.site-header-cart.focus .widget_shopping_cart {
     right: 0;
     width: 300px;
     left: auto;
     display: none;
 }
-.site-header-cart:hover .widget_shopping_cart, .site-header-cart.focus .widget_shopping_cart {
+.site-header-cart:hover .widget_shopping_cart, 
+.site-header-cart.focus .widget_shopping_cart {
     right: 0;
     width: 300px;
     left: auto;
@@ -243,6 +286,10 @@ ul.products::before, ul.products::after {
 }
 .custom-wrapper .custom-sidebar{
     flex-basis: 20%;
+}
+
+.custom-wrapper.not-flex{
+    display: inherit;
 }
 
 .single-product .custom-wrapper .product .images,
@@ -276,7 +323,9 @@ ul.products::before, ul.products::after {
     padding: 0 0;
 }
 
-.home.blog .site-header, .home.page:not(.page-template-template-homepage) .site-header, .home.post-type-archive-product .site-header {
+.home.blog .site-header, 
+.home.page:not(.page-template-template-homepage) .site-header, 
+.home.post-type-archive-product .site-header {
     margin-bottom: 0;
 }
 
@@ -453,4 +502,29 @@ svg.flipped{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     gap: .5rem;
+}
+
+/* Carousel */
+
+.slick-list{
+    margin: 0 0 0 0 !important;
+}
+
+/* Profiles */
+
+.profiles-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+.card.profile{
+    flex-direction: row;
+}
+.card.profile img{
+    width: 200px;
+    height: 200px;
+}
+.card.profile .card-body{
+    flex-grow: 1;
 }

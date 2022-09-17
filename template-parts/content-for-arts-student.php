@@ -3,24 +3,30 @@
     $pages = get_pages( array( 'child_of' => $postid, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
 ?>
 <?php if($pages) : ?>
-    <div class="grid grid-cols-3 gap-4 mb-8">
+    <!--<div class="grid grid-cols-3 gap-4 mb-8">-->
+    <?php woocommerce_product_loop_start();?>
         <?php foreach ($pages as $page) : ?>
             <?php $thumb_url = get_the_post_thumbnail_url($page->ID,'woocommerce_thumbnail');?>
 
-            <div class="border overflow-hidden rounded-lg flex flex-col">
-                <div class="text-center flex-grow">
+            <li class="card product">
+                <a href="<?php echo get_page_link( $page->ID ); ?>" class="">
                     <?php  if($thumb_url) :?>
-                        <img src="<?php echo $thumb_url;?>" alt="" class="w-full">
+                        <img src="<?php echo $thumb_url;?>" alt="" class="full">
                     <?php else : ?>
-                        <div class="w-full aspect-[4/3] bg-gray-400">&nbsp;</div>
+                        <div class="img-placeholder">&nbsp;</div>
                     <?php endif;?>
+                    <div class="card-heading">
                         <h3 class="my-4 text-xl"><?php echo $page->post_title; ?></h3>
-                    <div class="text-gray-400 p-4 text-sm text-justify"><?php echo apply_filters('the_content', $page->post_content);?></div>
+                    </div>
+                    <div class="card-body">
+                        <?php echo apply_filters('the_content', $page->post_content);?>
+                    </div>
+                </a>
+                <div class="card-footer">
+                    <a href="<?php echo get_page_link( $page->ID ); ?>" class="button full">Contact for more info<span> →</span></a>
                 </div>
-                <div class="p-4 flex">
-                    <a href="<?php echo get_page_link( $page->ID ); ?>" class="grow bg-rppurple-900 text-white text-center rounded p-2 justify-self-end hover:bg-purple-500">Contact for more info<span> →</span></a>
-                </div>
-            </div>
+            </li>
         <?php endforeach;?>
-    </div>
+    <?php woocommerce_product_loop_end();?>
+    <!--</div>-->
 <?php endif;?>
