@@ -83,7 +83,7 @@ p{
     margin-bottom: .8rem;
 }
 h1, h2{
-    margin: inherit;
+    margin: 0 0;
     color: inherit;
 }
 
