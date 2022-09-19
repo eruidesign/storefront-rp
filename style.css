@@ -33,6 +33,15 @@
     --rp-lightgray:rgb(171 168 168 / 1);
 }
 
+/* Typography */
+
+@font-face {
+	font-family: 'ReenieBeanie';
+	src: url('fonts/reeniebeanie.woff2') format('woff2'),
+		 url('fonts/reeniebeanie.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 
 /* Resets */
 
@@ -69,7 +78,10 @@ ul.products::before, ul.products::after {
 .storefront-full-width-content .woocommerce-products-header {
     text-align: center;
     padding: 0 0;
-  }
+}
+p{
+    margin-bottom: .8rem;
+}
 
 
 /* Styles */
@@ -381,6 +393,19 @@ svg.wave-left{
     
 }
 
+.section-title{
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--rp-tertiary);
+}
+
+.section-description {
+	font-family: 'ReenieBeanie';
+    font-size: 3rem;
+    color: var(--rp-lightgray);
+}
+
 /* Hero */
 
 .hero-content{
@@ -390,11 +415,12 @@ svg.wave-left{
 .hero-content > *{
     flex: 50%;
 }
-.home h1{
+.home .tagline{
     color: #fff;
     font-weight: bolder;
+    font-size: 3rem;
 }
-.home h1 span{
+.home .tagline span{
     padding-right: 2rem;
 }
 
