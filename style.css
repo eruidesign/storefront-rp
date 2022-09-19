@@ -82,6 +82,10 @@ ul.products::before, ul.products::after {
 p{
     margin-bottom: .8rem;
 }
+h1, h2{
+    margin: inherit;
+    color: inherit;
+}
 
 
 /* Styles */
@@ -160,6 +164,12 @@ p{
  .upsells{
     display: none;
  }
+ .wp-video{ /* embeded videos */
+    padding: 1rem;
+    background: #fff;
+ }
+
+
  /* Single Products */
  .single-product div.product .single_variation .price, /* variant price */
  .single-product div.product p.price{ /* default price */
