@@ -528,3 +528,32 @@ svg.flipped{
 .card.profile .card-body{
     flex-grow: 1;
 }
+
+/* Contact Forms */
+.wpcf7-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.checkbox-wrapper{ /* instead of label */
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    background: #f2f2f2;
+    padding: .6180469716em;
+}
+.wpcf7-form input[type=checkbox]{
+    margin-bottom: 0;
+}
+label.your-name,
+label.your-email{
+ flex-basis: 49%;
+}
+label.your-message{
+    flex-basis: 100%;
+}
+.wpcf7-form input[type=text],
+.wpcf7-form input[type=email],
+.wpcf7-form textarea{
+    width: 100%;
+}
