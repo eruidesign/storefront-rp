@@ -415,6 +415,7 @@ svg.wave-left{
 	font-family: 'ReenieBeanie';
     font-size: 3rem;
     color: var(--rp-lightgray);
+    line-height: 2.5rem;
 }
 
 /* Hero */
