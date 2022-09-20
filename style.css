@@ -159,6 +159,7 @@ p{
     box-shadow: 0 0 2rem rgba(0,0,0,.3);
     cursor: pointer;
     z-index: 1000;
+    border: 1px solid transparent;
 }
 
 .single-product div.product {
@@ -378,7 +379,6 @@ ul.products .wc-block-grid__product,
 .section-wrapper{
     position: relative;
     min-height: 600px;
-    background: #efefef;
 }
 .section-container{
     position: absolute;
