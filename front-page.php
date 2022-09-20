@@ -33,9 +33,9 @@ get_header(); ?>
     $section_5 = get_post($section_5_ID);
 ?>
 
-        <section class="hero inner" style="background-image: url(<?php echo get_the_post_thumbnail_url($section_1_ID,'banner-1440x600');?>);">
+        <section class="homepage hero" style="background-image: url(<?php echo get_the_post_thumbnail_url($section_1_ID,'banner-1440x600');?>);">
             <div class="section-wrapper">
-                <div class="hero-content">
+                <div class="hero-content inner">
                     <?php echo apply_filters('the_content', $section_1->post_content);?>
                 </div>
             </div>
