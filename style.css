@@ -499,6 +499,7 @@ svg.wave-left{
     grid-template-columns: repeat(3,1fr);
     gap: 2rem;
     position: relative;
+    margin: auto;
 }
 .shop .section-content{
     background: var(--rp-tertiary);
