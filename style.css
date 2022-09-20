@@ -33,6 +33,10 @@
     --rp-lightgray:rgb(171 168 168 / 1);
 }
 
+body{
+    /*background: #efefef;*/
+}
+
 /* Typography */
 
 @font-face {
@@ -125,6 +129,7 @@ p{
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid #efefef;
+    transition: ease 1s;
 }
 .card-heading,
 .card-body,
@@ -146,8 +151,21 @@ p{
     width: 100%;
     min-height: 200px;
     aspect-ratio: 16 / 9;
-    background: #efefef;
+    background: #a3a3a3;
 }
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2rem rgba(0,0,0,.3);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.single-product div.product {
+    position: relative;
+    overflow: visible;
+    width: 80%;
+  }
 
 .single-product div.product .summary {
     border: 1px solid #efefef;
@@ -189,6 +207,10 @@ p{
  .storefront-full-width-content .woocommerce-tabs .panel{
     width: 100%;
  }
+
+ .woocommerce-tabs {
+    overflow: visible;
+  }
 
  .woocommerce-tabs ul.tabs li a {
     padding: 1em 2em;
