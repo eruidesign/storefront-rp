@@ -622,6 +622,8 @@ label.your-message{
 }
 
 /*  My Account */
-.my-account .entry-header{
+.my-account .entry-header,
+.cart .entry-header,
+.checkout .entry-header{
     display: none;
 }
