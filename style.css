@@ -620,3 +620,8 @@ label.your-message{
 .wpcf7-form textarea{
     width: 100%;
 }
+
+/*  My Account */
+.my-account .entry-header{
+    display: none;
+}
