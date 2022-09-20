@@ -379,6 +379,7 @@ ul.products .wc-block-grid__product,
 .section-wrapper{
     position: relative;
     min-height: 600px;
+    display: flex;
 }
 .section-container{
     position: absolute;
@@ -445,6 +446,7 @@ svg.wave-left{
 .hero-content{
     display: flex;
     align-items: center;
+    flex-basis: 100%;
 }
 .hero-content > *{
     flex: 50%;
