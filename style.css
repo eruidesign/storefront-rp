@@ -258,7 +258,7 @@ ul.products .wc-block-grid__product,
 /* Header */
 
 .storefront-breadcrumb{
-    padding: 2rem 2rem 0 2rem;
+    padding: 2rem 2rem 2rem 2rem;
     margin: 0 0 0 0;
 }
 
@@ -554,6 +554,10 @@ svg.flipped{
 }
 .contact .entry-content{
     display: none;
+}
+
+.contact .wave{
+    fill: var(--rp-secondary);
 }
 
 /* For Arts Student */
