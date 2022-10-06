@@ -43,8 +43,8 @@ get_header(); ?>
 
         <section class="<?php echo $section_2->post_name;?>">
             <div class="section-header inner">
-                <h2 class="section-title"><?php echo $section_2->post_title;?></h2>
                 <div class="section-description"><?php echo apply_filters('the_content', $section_2->post_excerpt);?></div>
+                <h2 class="section-title"><?php echo $section_2->post_title;?></h2>
             </div>
             <div class="section-wrapper">
                 <img src="<?php echo get_the_post_thumbnail_url($section_2_ID,'banner-1440x600');?>" class="section-image">
@@ -68,8 +68,8 @@ get_header(); ?>
 
         <section class="<?php echo $section_3->post_name;?>">
             <div class="section-header inner">
-                <h2 class="section-title"><?php echo $section_3->post_title;?></h2>
                 <div class="section-description"><?php echo apply_filters('the_content', $section_3->post_excerpt);?></div>
+                <h2 class="section-title"><?php echo $section_3->post_title;?></h2>
             </div>
             <div class="section-wrapper">
                 <img src="<?php echo get_the_post_thumbnail_url($section_3_ID,'banner-1440x600');?>" class="section-image">
@@ -93,8 +93,8 @@ get_header(); ?>
 
         <section class="<?php echo $section_4->post_name;?>">
             <div class="section-header inner">
-                <h2 class="section-title"><?php echo $section_4->post_title;?></h2>
                 <div class="section-description"><?php echo apply_filters('the_content', $section_4->post_excerpt);?></div>
+                <h2 class="section-title"><?php echo $section_4->post_title;?></h2>
             </div>
             <div class="section-wrapper">
                 <img src="<?php echo get_the_post_thumbnail_url($section_4_ID,'banner-1440x600');?>" class="section-image">
@@ -118,8 +118,8 @@ get_header(); ?>
 
         <section class="<?php echo $section_5->post_name;?>">
     <div class="section-header inner">
-        <h2 class="section-title"><?php echo $section_5->post_title;?></h2>
         <div class="section-description"><?php echo apply_filters('the_content', $section_5->post_excerpt);?></div>
+        <h2 class="section-title"><?php echo $section_5->post_title;?></h2>
     </div>
     <div class="section-wrapper">
         <div class="section-container inner">
