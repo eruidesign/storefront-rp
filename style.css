@@ -292,6 +292,12 @@ ul.products .wc-block-grid__product,
     display: flex;
     flex-grow: 1;
 }
+
+.profile a::before{
+    font-family: "Awesome Font 5 Free";
+    content: "";
+}
+
 .woocommerce-active .site-header .main-navigation{
     width: auto;
     margin: 0 0;
