@@ -286,6 +286,7 @@ ul.products .wc-block-grid__product,
 }
 .header-wrapper{
     display: flex;
+    flex-direction: column;
 }
 .storefront-primary-navigation{
     display: flex;
@@ -315,6 +316,7 @@ ul.products .wc-block-grid__product,
     margin: 0 0;
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
 }
 
 .site-header-cart{
@@ -660,5 +662,11 @@ label.your-message{
         display: flex;
         flex-grow: 1;
         justify-content: space-between;
+    }
+    .woocommerce-active .site-header .main-navigation{
+        flex-direction: row;
+    }
+    .header-wrapper{
+        flex-direction: row;
     }
 }
