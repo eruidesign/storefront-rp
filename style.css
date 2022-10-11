@@ -196,6 +196,13 @@ p{
     font-size: 1.41575em;
   }
 
+  .product_title{
+    font-family: 'ReenieBeanie';
+    font-size: 3rem;
+    color: var(--rp-lightgray);
+    line-height: 2.5rem;
+  }
+
  /* Tabs */
 
  .storefront-full-width-content .woocommerce-tabs ul.tabs{
@@ -591,6 +598,11 @@ svg.flipped{
     gap: .5rem;
 }
 
+.for-arts-student .products.columns-5{
+    display: flex;
+    flex-direction: column;
+}
+
 /* Carousel */
 
 .slick-list{
@@ -667,6 +679,10 @@ label.your-message{
         flex-direction: row;
     }
     .header-wrapper{
+        flex-direction: row;
+    }
+
+    .for-arts-student .products.columns-5{
         flex-direction: row;
     }
 }
