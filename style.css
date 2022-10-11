@@ -169,7 +169,7 @@ p{
   }
 
 .single-product div.product .summary {
-    border: 1px solid #efefef;
+    /*border: 1px solid #efefef;*/
     padding: 2rem;
     border-radius: 1rem;
 }
