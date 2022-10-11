@@ -220,6 +220,18 @@ p{
     overflow: visible;
   }
 
+  .woocommerce-tabs h2 + h3, 
+  .woocommerce-tabs .beta + h3 {
+    border-top: none;
+    padding-top: .5407911001em;
+  }
+
+  .woocommerce-tabs .panel h2:first-of-type {
+    font-size: 1.618em;
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+
  .woocommerce-tabs ul.tabs li a {
     padding: 1em 2em;
     display: block;
