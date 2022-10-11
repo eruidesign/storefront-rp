@@ -177,3 +177,7 @@ function add_product_description_products_shortcode() {
         echo '<p class="product-description">' . $product->get_short_description() . '</p>';
     }
 }
+
+/** Custom Image Sizes **/
+add_image_size('banner-1440x600', 1440, 600, true);
+add_image_size('banner-1440x800', 1440, 800, true);
