@@ -698,3 +698,18 @@ label.your-message{
         flex-direction: row;
     }
 }
+
+
+/*  For Arts Students - Subpages */
+
+.rhythmic-patterns-online svg#shape1,
+.china-studio svg#shape1,
+.bhutan-studio svg#shape1{
+    transform: scaleX(-1);
+}
+
+.rhythmic-patterns-online .section-content,
+.china-studio .section-content,
+.bhutan-studio .section-content{
+    background: var(--rp-tertiary);
+}
