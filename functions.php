@@ -168,7 +168,7 @@ function my_wooswipe_scripts_method()
 // Rehook your custom callback
 add_action( 'wp_enqueue_scripts', 'my_wooswipe_scripts_method' );
 
-add_action( 'woocommerce_shop_loop_item_title', 'add_product_description_products_shortcode', 20 );
+/*add_action( 'woocommerce_shop_loop_item_title', 'add_product_description_products_shortcode', 20 );
 function add_product_description_products_shortcode() {
     global $product, $woocommerce_loop;
     
@@ -176,7 +176,7 @@ function add_product_description_products_shortcode() {
     &&  isset($woocommerce_loop['name']) && $woocommerce_loop['name'] === 'products') {
         echo '<p class="product-description">' . $product->get_short_description() . '</p>';
     }
-}
+}*/
 
 /** Custom Image Sizes **/
 add_image_size('banner-1440x600', 1440, 600, true);
