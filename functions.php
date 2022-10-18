@@ -1,5 +1,23 @@
 <?php
 
+
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+add_action( 'carbon_fields_register_fields', 'crb_attach_post_meta' );
+function crb_attach_post_meta() {
+    Container::make( 'post_meta', __('Audio Preview') )
+        ->where( 'post_type', 'IN', array('product') )
+        ->where( 'post_term', 'IN', array(
+            'field' => 'slug',
+            'value' => array('seasons'),
+            'taxonomy' => 'product_cat',
+        ) )
+        ->add_fields(array(
+            Field::make( 'text', 'crb_audio_preview', __( 'Audi Preview File Name' ) )
+    ));
+}
+
 function theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' ); 
