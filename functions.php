@@ -199,3 +199,15 @@ function add_product_description_products_shortcode() {
 /** Custom Image Sizes **/
 add_image_size('banner-1440x600', 1440, 600, true);
 add_image_size('banner-1440x800', 1440, 800, true);
+
+
+function my_custom_product_button(){
+
+    if ( in_array( $current_term_slug, array('seasons','animals','numbers','colors','emotions') ) ) {
+        echo '<a href="#" class="button"><span></span> Play Audio Sample</a>';
+    }else{
+        echo '<a href="#" class="button"><span></span> Artist Profile</a>';
+    }
+}
+do_action( 'woocommerce_before_add_to_cart_form','my_custom_product_button' );
+

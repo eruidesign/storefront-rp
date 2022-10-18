@@ -92,16 +92,6 @@ if ( post_password_required() ) {
             do_action( 'woocommerce_single_product_summary' );
             ?>
 
-            <?php 
-            
-            if ( in_array( $current_term_slug, array('seasons','animals','numbers','colors','emotions') ) ) {
-                echo '<a href="#" class="button"><span></span> Play Audio Sample</a>';
-            }else{
-                echo '<a href="#" class="button"><span></span> Artist Profile</a>';
-            }
-            
-            ?>
-
         </div>
 
         <?php
