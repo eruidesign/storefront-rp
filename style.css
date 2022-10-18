@@ -706,6 +706,7 @@ label.your-message{
 .china-studio svg#shape1,
 .bhutan-studio svg#shape1{
     transform: scaleX(-1);
+    margin-left: -0.5px;
 }
 
 .rhythmic-patterns-online .section-content,
