@@ -96,7 +96,7 @@ if ( post_password_required() ) {
                 if ( in_array( $current_term_slug, array('seasons','animals','numbers','colors','emotions') ) ) {
                     echo '<a href="#" class="button"><span></span> Play Audio Sample</a>';
                 }else{
-                    echo '<a href="#" class="button"><span></span> Artist Profile</a>';
+                    echo '<a href="#" class="button"><span></span> Meet the Artist</a>';
                 }
             ?>
 
