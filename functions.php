@@ -10,7 +10,7 @@ function crb_attach_post_meta() {
         ->where( 'post_type', 'IN', array('product') )
         ->where( 'post_term', 'IN', array(
             'field' => 'slug',
-            'value' => array('seasons'),
+            'value' => 'seasons',
             'taxonomy' => 'product_cat',
         ) )
         ->add_fields(array(
