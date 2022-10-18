@@ -35,6 +35,7 @@ if ( post_password_required() ) {
 <?php
     $terms = get_the_terms( get_the_ID(), 'product_cat' );
     $current_term_ID = $terms[0]->term_id;
+    $current_term_slug = $terms[0]->slug;
     $parent_term_ID = get_term_by('slug','wam','product_cat')->term_id;
 ?>
 <div class="custom-wrapper inner">
@@ -90,6 +91,17 @@ if ( post_password_required() ) {
              */
             do_action( 'woocommerce_single_product_summary' );
             ?>
+
+            <?php 
+            
+            if ( in_array( $current_term_slug, array('seasons','animals','numbers','colors','emotions') ) ) {
+                echo '<a href="#" class="button"><span></span> Play Audio Sample</a>';
+            }else{
+                echo '<a href="#" class="button"><span></span> Artist Profile</a>';
+            }
+            
+            ?>
+
         </div>
 
         <?php
