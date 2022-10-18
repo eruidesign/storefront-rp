@@ -91,7 +91,7 @@ $child_categories = get_terms( $args );?>
                         <h2 class="woocommerce-loop-product__title"><?php echo $cat->name;?></h2>
                     </div>
                     
-                    <div class="card-body"><?php echo $cat->description;?></div>
+                    <!--<div class="card-body"><?php echo $cat->description;?></div>-->
                 </a>
                 <div class="card-footer">
                     <a href="<?php echo esc_url(get_term_link($cat));?>" class="button full">Discover <?php echo $cat->name;?> Songs</a>
