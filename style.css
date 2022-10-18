@@ -456,6 +456,7 @@ ul.products .wc-block-grid__product,
 .section-image{
     object-fit: cover;
     min-height: 600px;
+    object-position: 100% 100%;
 }
 .wave{
     height: 100%;
